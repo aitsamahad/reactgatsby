@@ -5,27 +5,25 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HeroSection from '../components/Reuseable/HeroSection'
 import Infoblock from '../components/Reuseable/Infoblock'
-import DualInfoblock from '../components/Reuseable/DualInfoblock'
-import TeamPhotoSection from '../components/About/TeamPhotoSection'
+import Contact from '../components/Contact/Contact'
 
 const ContactPage = ({data}) => (
   <Layout>
     <SEO title="Home" />
     <HeroSection
       img={data.img.childImageSharp.fluid}  
-      title="About iDevelopStudio"
+      title="Contact Us"
       subtitle=""
       heroClass="about-background"
     />
-    <DualInfoblock heading="Message from CEO" src="https://cdn.dribbble.com/users/37530/screenshots/2127812/open-uri20150630-11-1d0n1js" />
-    <Infoblock heading="Our Vision" />
-    <TeamPhotoSection />
+    <Infoblock heading="How Can We Help?" />
+    <Contact />
   </Layout>
 )
 
 export const query = graphql`
 {
-  img: file(relativePath: { eq: "about.png"}) {
+  img: file(relativePath: { eq: "contact.png"}) {
     childImageSharp {
       fluid(maxWidth: 400, maxHeight: 250) {
         ...GatsbyImageSharpFluid_tracedSVG
